@@ -1,0 +1,130 @@
+flat file text
+hieracical upside down
+xml user defined tag 
+p , c ,e 
+
+hardware
+software
+data
+data accesible  lan
+	dml
+	ddl
+
+people
+	admin
+	devopler
+	end user
+procedure
+
+	
+integraty
+sharing
+concurrent
+recovery backup
+
+1 asha csc java   
+1 asha  csc python
+2  simi  it  angular
+2  simi   it  net
+3  rini   csc csc
+
+branch branch id
+1      csc
+2
+
+mysql> select name as Name , DOB as DateOfBirth from programers;
+ERROR 1146 (42S02): Table 'test.programers' doesn't exist
+mysql> select name as Name , DOB as DateOfBirth from programer;
++-------+-------------+
+| Name  | DateOfBirth |
++-------+-------------+
+| anand | 2000-08-23  |
+| reena | 1992-04-13  |
+| aruna | 1995-06-28  |
++-------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> select name as Name , salary , salary + 500 as incrementedBy500 from programer;
++-------+--------+------------------+
+| Name  | salary | incrementedBy500 |
++-------+--------+------------------+
+| anand |  55000 |            55500 |
+| reena |  43000 |            43500 |
+| aruna |  63000 |            63500 |
++-------+--------+------------------+
+3 rows in set (0.01 sec)
+
+mysql> select * from programer where geneder = 'f' and salary > 10000 and skill1 = 'java' or skill2 = 'java';
+ERROR 1054 (42S22): Unknown column 'geneder' in 'where clause'
+mysql> select * from programer where gender = 'f' and salary > 10000 and skill1 = 'java' or skill2 = 'java';
++-----+-------+------------+------------+--------+--------+--------+--------+
+| pid | name  | DOB        | DOJ        | gender | skill1 | skill2 | salary |
++-----+-------+------------+------------+--------+--------+--------+--------+
+| p2  | reena | 1992-04-13 | 2015-09-25 | f      | corba  | java   |  43000 |
++-----+-------+------------+------------+--------+--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from programer where skill1 <> 'java' or skill2 <> 'java';
++-----+-------+------------+------------+--------+--------+--------+--------+
+| pid | name  | DOB        | DOJ        | gender | skill1 | skill2 | salary |
++-----+-------+------------+------------+--------+--------+--------+--------+
+| p1  | anand | 2000-08-23 | 2023-06-15 | m      | java   | .net   |  55000 |
+| p2  | reena | 1992-04-13 | 2015-09-25 | f      | corba  | java   |  43000 |
+| p3  | aruna | 1995-06-28 | 2017-04-23 | f      | cloud  | python |  63000 |
++-----+-------+------------+------------+--------+--------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from programer where skill1 <> 'java' and  skill2 <> 'java';
++-----+-------+------------+------------+--------+--------+--------+--------+
+| pid | name  | DOB        | DOJ        | gender | skill1 | skill2 | salary |
++-----+-------+------------+------------+--------+--------+--------+--------+
+| p3  | aruna | 1995-06-28 | 2017-04-23 | f      | cloud  | python |  63000 |
++-----+-------+------------+------------+--------+--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from programer where skill1 = '_j%' or skill2 = '_j%';
+Empty set (0.00 sec)
+
+mysql> select * from programer where skill1 = '_a%' or skill2 = '_a%';
+Empty set (0.00 sec)
+
+mysql> select * from programer where skill1 = '?a%' or skill2 = '?a%';
+Empty set (0.00 sec)
+
+mysql> select * from programer where skill1 as '_a%' or skill2 as '_a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as '_a%' or skill2 as '_a%'' at line 1
+mysql> select * from programer where skill1 as '?a%' or skill2 as '?a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as '?a%' or skill2 as '?a%'' at line 1
+mysql> select * from programer where skill1 like '_a%' or skill2 like '_a%';
++-----+-------+------------+------------+--------+--------+--------+--------+
+| pid | name  | DOB        | DOJ        | gender | skill1 | skill2 | salary |
++-----+-------+------------+------------+--------+--------+--------+--------+
+| p1  | anand | 2000-08-23 | 2023-06-15 | m      | java   | .net   |  55000 |
+| p2  | reena | 1992-04-13 | 2015-09-25 | f      | corba  | java   |  43000 |
++-----+-------+------------+------------+--------+--------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from programer order by salary DESC;
++-----+-------+------------+------------+--------+--------+--------+--------+
+| pid | name  | DOB        | DOJ        | gender | skill1 | skill2 | salary |
++-----+-------+------------+------------+--------+--------+--------+--------+
+| p3  | aruna | 1995-06-28 | 2017-04-23 | f      | cloud  | python |  63000 |
+| p1  | anand | 2000-08-23 | 2023-06-15 | m      | java   | .net   |  55000 |
+| p2  | reena | 1992-04-13 | 2015-09-25 | f      | corba  | java   |  43000 |
++-----+-------+------------+------------+--------+--------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select name as Name , (floor(datediff(curdate(),DOB)/365)) as Age, gender as Gender,salary from programer;
++-------+------+--------+--------+
+| Name  | Age  | Gender | salary |
++-------+------+--------+--------+
+| anand |   24 | m      |  55000 |
+| reena |   32 | f      |  43000 |
+| aruna |   29 | f      |  63000 |
++-------+------+--------+--------+
+3 rows in set (0.03 sec)
+
+mysql>
+
+modify for auto incrementselect
+
